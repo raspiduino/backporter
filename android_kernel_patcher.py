@@ -45,6 +45,7 @@ Eg: python3 ./android_kernel_patcher.py android_kernel_3.18.91/virt/kvm linux_ke
 
 if (sys.argv[1] == "") or ("-h" in sys.argv) or ("--help" in sys.argv) or ("help" in sys.argv):
     print(helpstring)
+    exit(0)
 
 # Create a directory named 'diff' if it not exist yet
 
