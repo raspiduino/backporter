@@ -91,4 +91,4 @@ for f in filelist:
 
 for f in added:
     print("Adding " + f)
-    os.system("cp " + argv[3] + "/" + f + " " + argv[1] + "/" + f)
+    os.system("cp " + sys.argv[3] + "/" + f + " " + sys.argv[1] + "/" + f)
