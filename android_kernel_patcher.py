@@ -116,6 +116,7 @@ for f in filelist:
     
     cmp = open("diff/" + f + ".diff", "r")
     a = cmp.read()
+    cmp.close()
     
     if a == "":
         print("File " + f + " same!")
@@ -130,8 +131,17 @@ for f in filelist:
             os.system("rm diff/" + f + ".diff")
     
     else:
-        difflist.append(f) # Add to diff list for showing later
-        print("File " + f + " diff! See diff/" + f + ".diff")
+        os.system("diff " + sys.argv[3] + "/" + f + " " + sys.argv[1] + "/" + f + " > diff/" + f + ".diff")
+    
+        cmp = open("diff/" + f + ".diff", "r")
+        a = cmp.read()
+        cmp.close()
+
+        if a == "":
+            print("File " + f + " already patched! Abort.")
+        else:
+            difflist.append(f) # Add to diff list for showing later
+            print("File " + f + " diff! See diff/" + f + ".diff")
 
 # Add files upstream
 for f in added:
