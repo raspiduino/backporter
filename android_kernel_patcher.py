@@ -28,6 +28,13 @@
 # [linux_kernel_source_of_the_same_version] is the Linux kernel in the same version of your Android kernel. For example your phone use 3.18.91 kernel so you should goto https://kernel.org to get the source code of the 3.18 kernel
 # [linux_kernel_source_upstream] is the Linux kernel upstream source you want to get patch from
 # Eg: python3 ./android_kernel_patcher.py android_kernel_3.18.91/virt/kvm linux_kernel_3.18.91/virt/kvm linux_kernel_4.4.284/virt/kvm
+#
+# Or:
+# Eg: python3 ./android_kernel_patcher.py android_kernel_3.18.91/ linux_kernel_3.18.91/ linux_kernel_4.4.284/ -p virt/kvm
+#
+# Where -p follow by the directory you want to patch.
+
+# Thanks for using my script!
 
 import os, sys
 
@@ -43,9 +50,16 @@ For example your phone use 3.18.91 kernel so you should goto https://kernel.org 
 Eg: python3 ./android_kernel_patcher.py android_kernel_3.18.91/virt/kvm linux_kernel_3.18.91/virt/kvm linux_kernel_4.4.284/virt/kvm
 '''
 
+# Print helpstring
 if (sys.argv[1] == "") or ("-h" in sys.argv) or ("--help" in sys.argv) or ("help" in sys.argv):
     print(helpstring)
     exit(0)
+
+# Add path if -p specified
+if len(sys.argv) > 4:
+    if sys.argv[4] == "-p":
+        for i in range(1,4)
+            sys.argv[i] += "/" + sys.argv[5]
 
 # Create a directory named 'diff' if it not exist yet
 
