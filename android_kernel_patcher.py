@@ -58,7 +58,7 @@ if (sys.argv[1] == "") or ("-h" in sys.argv) or ("--help" in sys.argv) or ("help
 # Add path if -p specified
 if len(sys.argv) > 4:
     if sys.argv[4] == "-p":
-        for i in range(1,4)
+        for i in range(1,4):
             sys.argv[i] += "/" + sys.argv[5]
 
 # Create a directory named 'diff' if it not exist yet
