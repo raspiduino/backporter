@@ -139,5 +139,6 @@ for f in added:
     os.system("cp " + sys.argv[3] + "/" + f + " " + sys.argv[1] + "/" + f)
 
 # Print diff list
+print("Diff list:")
 difflist.sort()
 print(difflist)
